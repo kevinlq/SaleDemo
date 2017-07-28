@@ -62,17 +62,12 @@ unix{
 DEPENDPATH += bin
 
 include ($$PWD/Src/ui/ui.pri)
-include ($$PWD/Src/db/db.pri)
 include ($$PWD/Src/util/util.pri)
-include ($$PWD/Src/tcpserver/tcpserver.pri)
 include ($$PWD/Src/bean/bean.pri)
 
 INCLUDEPATH +=$$PWD/Src
-INCLUDEPATH +=$$PWD/Src/db
 INCLUDEPATH +=$$PWD/Src/util
-INCLUDEPATH +=$$PWD/Src/tcpserver
 INCLUDEPATH +=$$PWD/Src/bean
-
 
 SOURCES += main.cpp
 

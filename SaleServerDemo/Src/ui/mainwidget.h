@@ -10,6 +10,17 @@ class MainWidget : public QWidget
 public:
     MainWidget(QWidget *parent = 0);
     ~MainWidget();
+
+private:
+    void init();
+
+    void initForm();
+
+Q_SIGNALS:
+
+private Q_SLOTS:
+
+private:
 };
 
 #endif // MAINWIDGET_H
