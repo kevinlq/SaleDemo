@@ -11,7 +11,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = SaleServerDemo
 TEMPLATE = app
 
-
 QMAKE_CXXFLAGS += -std=c++0x
 
 win32{

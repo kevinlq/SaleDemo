@@ -1,5 +1,7 @@
 HEADERS += \
-    $$PWD/appbean.h
+    $$PWD/appbean.h \
+    $$PWD/tcpserverbean.h
 
 SOURCES += \
-    $$PWD/appbean.cpp
+    $$PWD/appbean.cpp \
+    $$PWD/tcpserverbean.cpp

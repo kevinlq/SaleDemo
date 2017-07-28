@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+class AppBean;
+
 class MainWidget : public QWidget
 {
     Q_OBJECT
@@ -16,11 +18,18 @@ private:
 
     void initForm();
 
+    void initWidget();
+
+    void initBean();
+
+    void initConnect();
+
 Q_SIGNALS:
 
 private Q_SLOTS:
 
 private:
+    AppBean *m_pAppbean;
 };
 
 #endif // MAINWIDGET_H
