@@ -24,6 +24,8 @@
 #include <QHBoxLayout>
 #include <QGridLayout>
 
+#include "bean/appbean.h"
+
 LoginWidget::LoginWidget(QWidget *parent)
     : QWidget(parent)
 {
@@ -39,6 +41,8 @@ void LoginWidget::init()
     initForm ();
 
     initWidget ();
+
+    initBean ();
 
     initConnect ();
 }
@@ -112,14 +116,26 @@ void LoginWidget::initWidget()
     setLayout (m_pGMainLayout);
 }
 
+void LoginWidget::initBean()
+{
+    m_pAppBean = new AppBean(this);
+}
+
 void LoginWidget::initConnect()
 {
     connect (m_pPbnLogin,SIGNAL(clicked(bool)),
              this,SLOT(slotLoginClicked()));
+
+    connect (this,SIGNAL(signalSendLoginInfo(QString)),
+             m_pAppBean,SIGNAL(signalSendToServer(QString)));
 }
 
 void LoginWidget::slotLoginClicked()
 {
-    //
+    //下面是测试通信数据，具体还需要指定通信协议
+    QString testStr;
+    testStr = "hello is client!";
+
+    emit signalSendLoginInfo (testStr);
 }
 

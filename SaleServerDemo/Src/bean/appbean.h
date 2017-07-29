@@ -18,6 +18,7 @@ private:
     void init();
 
 Q_SIGNALS:
+    void signalSendStr(const QString &str);
 
 private Q_SLOTS:
     void slotClientReadData(int clientID,const QString &IP,

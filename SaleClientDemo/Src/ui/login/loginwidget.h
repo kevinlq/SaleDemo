@@ -12,6 +12,8 @@ class QHBoxLayout;
 class QVBoxLayout;
 class QGridLayout;
 
+class AppBean;
+
 class LoginWidget : public QWidget
 {
     Q_OBJECT
@@ -26,9 +28,12 @@ private:
 
     void initWidget();
 
+    void initBean();
+
     void initConnect();
 
 Q_SIGNALS:
+    void signalSendLoginInfo(const QString &str);
 
 private Q_SLOTS:
     void slotLoginClicked();
@@ -47,6 +52,9 @@ private:
     QPushButton *m_pPbnLogin;
 
     QGridLayout *m_pGMainLayout;
+
+private:
+    AppBean *m_pAppBean;
 };
 
 #endif // LOGINWIDGET_H

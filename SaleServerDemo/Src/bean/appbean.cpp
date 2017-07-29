@@ -4,6 +4,7 @@
 
 #include <QApplication>
 #include <QThread>
+#include <QDebug>
 
 AppBean::AppBean(QObject *parent) :
     QObject(parent)
@@ -43,16 +44,38 @@ void AppBean::init()
 void AppBean::slotClientReadData(int clientID, const QString &IP,
                                  int Port, const QByteArray &data)
 {
-    //
+    Q_UNUSED(clientID);
+
+    QString str = QString("read data form ip:%1 port: %2 data:%3 ")
+            .arg (IP).arg (Port).arg (QString(data));
+
+    emit signalSendStr (str);
+#if DEBUG_OUT
+    qDebug()<<str;
+#endif
 }
 
 void AppBean::slotClientConnect(int clientID, const QString &IP, int Port)
 {
-    //
+    Q_UNUSED(clientID);
+
+    QString str = QString("client connect ip:%1 port: %2 ").arg (IP).arg (Port);
+
+    emit signalSendStr (str);
+#if DEBUG_OUT
+    qDebug()<<str;
+#endif
 }
 
 void AppBean::slotClientDisConnect(int clientID, const QString &IP, int Port)
 {
-    //
+    Q_UNUSED(clientID);
+
+    QString str = QString("client disconnect ip:%1 port: %2 ").arg (IP).arg (Port);
+
+    emit signalSendStr (str);
+#if DEBUG_OUT
+    qDebug()<<str;
+#endif
 }
 

@@ -3,6 +3,9 @@
 
 #include <QWidget>
 
+class QTextEdit;
+class QVBoxLayout;
+
 class AppBean;
 
 class MainWidget : public QWidget
@@ -27,6 +30,11 @@ private:
 Q_SIGNALS:
 
 private Q_SLOTS:
+    void slotShowText(const QString &str);
+
+private:
+    QTextEdit   *m_pTextEdit;
+    QVBoxLayout *m_pVMainLayout;    //主布局
 
 private:
     AppBean *m_pAppbean;

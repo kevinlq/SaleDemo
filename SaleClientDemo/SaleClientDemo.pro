@@ -11,6 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = SaleClientDemo
 TEMPLATE = app
 
+DEFINES +=DEBUG_OUT
 
 QMAKE_CXXFLAGS += -std=c++0x
 

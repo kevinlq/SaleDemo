@@ -3,6 +3,9 @@
 
 #include <QObject>
 
+class ClientSocketBean;
+class QThread;
+
 class AppBean : public QObject
 {
     Q_OBJECT
@@ -14,10 +17,13 @@ private:
     void init();
 
 Q_SIGNALS:
-
+    void signalSendToServer(const QString &str);
 private Q_SLOTS:
 
+
 private:
+    ClientSocketBean    *m_pClientBean;
+    QThread             *m_pClientThread;
 };
 
 #endif // APPBEAN_H
